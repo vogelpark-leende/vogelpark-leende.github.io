@@ -5,474 +5,335 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Buurtvereniging Vogelpark — Leende</title>
 <meta name="description" content="Buurtvereniging Vogelpark in Leende — activiteiten in de wijk en lidmaatschap.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 21C7 14 12 13 16 17C20 13 25 14 30 21C24 18 20.5 18.5 16 23C11.5 18.5 8 18 2 21Z' fill='%23346C42'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M3 20 Q 11 8 16 18 Q 21 8 29 20' fill='none' stroke='%23E0B458' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F9F5E9;
-    --bg-alt: #F0EBD9;
-    --card-bg: #FEFCF6;
-    --border: #DBD8C9;
-    --ink: #182315;
-    --ink-soft: #455142;
-    --moss: #346C42;
-    --moss-light: #E6EFE3;
-    --moss-dark: #15301B;
-    --ochre: #9A5505;
-    --cream-text: #F8F5EC;
+    --bg: #0C1C13;
+    --bg-2: #10251A;
+    --ink: #F3EFE3;
+    --ink-soft: #A9B6A4;
+    --hair: rgba(224,180,88,.24);
+    --gold: #E0B458;
+    --gold-deep: #C79A3F;
+    --card: #FBF7EC;
+    --card-ink: #1E2E1D;
+    --card-soft: #58624F;
+    --card-line: #E6DCC2;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Nunito Sans', sans-serif;
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.62;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    margin: 0;
-    color: var(--ink);
-  }
+  h1, h2, h3 { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; line-height: 1.04; }
   p { margin: 0; }
-  a { text-decoration: none; }
+  a { color: inherit; text-decoration: none; }
   img, svg { display: block; max-width: 100%; }
 
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 14px 28px;
-    border: 0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-  }
-  .btn-primary { background: var(--ochre); color: var(--cream-text); }
-  .btn-primary:hover { background: #7E4704; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(154,85,5,.28); }
-  .btn-outline { background: transparent; color: var(--moss); border: 1.5px solid var(--moss); }
-  .btn-outline:hover { background: var(--moss-light); }
-  .btn-outline-light { background: transparent; color: var(--cream-text); border: 1.5px solid rgba(248,245,236,.6); }
-  .btn-outline-light:hover { background: rgba(248,245,236,.1); }
-  .btn-sm { font-size: 13.5px; padding: 10px 20px; border-radius: 9px; }
+  .wrap { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  @media (min-width: 720px) { .wrap { padding: 0 44px; } }
 
   .kicker {
-    text-transform: uppercase;
-    letter-spacing: .16em;
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--moss);
+    font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: .2em;
+    font-size: 11px; font-weight: 600; color: var(--gold);
+    display: inline-flex; align-items: center; gap: 10px;
   }
+  .kicker::before { content: attr(data-n); font-family: 'Cormorant Garamond', serif; font-size: 18px; letter-spacing: 0; color: var(--gold); opacity: .8; }
 
-  /* header */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: .02em;
+    padding: 14px 26px; border: 1px solid var(--gold); border-radius: 3px;
+    cursor: pointer; transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .btn-primary { background: var(--gold); color: #17230F; }
+  .btn-primary:hover { background: #EBC673; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--gold); }
+  .btn-ghost:hover { background: rgba(224,180,88,.12); }
+  .btn-sm { padding: 11px 20px; font-size: 13px; }
+  .btn-block { width: 100%; }
+
+  /* logo — vogel in vlucht (lijn) + woordmerk */
+  .logo { display: inline-flex; align-items: center; gap: 11px; color: var(--gold); }
+  .logo .bird { width: 46px; height: auto; flex: none; }
+  .logo .wm { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 25px; letter-spacing: .01em; color: var(--ink); }
+  .logo .tag { display: none; }
+  .logo.logo-stack { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .logo.logo-stack .bird { width: 66px; }
+  .logo.logo-stack .wm { font-size: 23px; }
+  .logo.logo-stack .tag { display: block; font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-soft); }
+
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(12,28,19,.85); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hair);
   }
-  .logo { display: flex; align-items: center; gap: 10px; }
-  .logo span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -.01em; }
-  nav.links { display: flex; align-items: center; gap: 32px; }
-  nav.links a.navlink { font-size: 15px; font-weight: 600; color: var(--ink-soft); }
-  nav.links a.navlink:hover { color: var(--moss); }
+  .header-in { display: flex; align-items: center; justify-content: space-between; padding: 13px 20px; max-width: 1060px; margin: 0 auto; }
+  @media (min-width: 720px) { .header-in { padding: 15px 44px; } }
+  nav.links { display: none; gap: 30px; align-items: center; }
+  nav.links a { font-size: 13px; color: var(--ink-soft); letter-spacing: .03em; }
+  nav.links a:hover { color: var(--ink); }
+  nav.links a.btn-primary { color: #17230F; font-weight: 600; }
+  @media (min-width: 900px) { nav.links { display: flex; } }
 
-  /* hero */
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: clamp(56px, 9vw, 96px) 40px clamp(64px, 10vw, 108px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 22px;
-  }
-  .hero-deco { position: absolute; top: -30px; right: -20px; opacity: .3; pointer-events: none; width: 240px; }
-  .hero h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.03; }
-  .hero .lede { max-width: 620px; font-size: 18px; line-height: 1.6; color: var(--ink-soft); }
-  .hero .postcodes { font-size: 14px; color: var(--ink-soft); }
-  .hero .ctas { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+  .hero { position: relative; overflow: hidden; padding: 64px 0 52px; }
+  @media (min-width: 720px) { .hero { padding: 116px 0 96px; } }
+  .hero-bird { position: absolute; right: -40px; bottom: -20px; width: min(440px, 60%); color: var(--gold); opacity: .12; pointer-events: none; }
+  .hero .inner { position: relative; z-index: 1; display: grid; gap: 20px; max-width: 20ch; }
+  .hero h1 { font-size: clamp(60px, 15vw, 128px); letter-spacing: -.01em; }
+  .hero .lede { max-width: 42ch; font-size: 18px; color: var(--ink-soft); font-family: 'Inter', sans-serif; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
 
-  /* sections */
-  section { padding: clamp(56px, 8vw, 96px) 40px; }
-  .band-alt { background: var(--bg-alt); }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep), transparent); opacity: .5; }
 
-  .over-ons { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .over-ons-copy { display: flex; flex-direction: column; gap: 18px; }
-  .over-ons-copy h2 { font-size: clamp(28px, 3.4vw, 36px); line-height: 1.15; }
-  .over-ons-copy p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
-  .over-ons-art {
-    background: var(--moss-light);
-    border-radius: 24px;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 320px;
-  }
+  .sec { padding: 58px 0; }
+  @media (min-width: 720px) { .sec { padding: 100px 0; } }
+  .sec-head { display: grid; gap: 14px; margin-bottom: 36px; max-width: 62ch; }
+  .sec-head h2 { font-size: clamp(34px, 6vw, 58px); }
+  .sec-head p { color: var(--ink-soft); font-size: 15px; }
 
-  .activiteiten-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 44px; }
-  .activiteiten-head h2 { font-size: clamp(28px, 3.4vw, 36px); }
-  .activiteiten-head p { max-width: 520px; font-size: 16px; color: var(--ink-soft); }
-  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 760px; margin: 0 auto; }
+  .prose { max-width: 60ch; display: grid; gap: 16px; color: var(--ink-soft); font-size: 16.5px; }
+
+  .cards { display: grid; gap: 22px; }
+  @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
   .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    transition: box-shadow .2s ease, transform .2s ease;
+    background: var(--bg-2); border: 1px solid var(--hair); border-left: 3px solid var(--gold);
+    border-radius: 3px; padding: 30px; display: flex; flex-direction: column; gap: 14px;
+    transition: transform .18s ease, border-color .18s ease;
   }
-  .card:hover { box-shadow: 0 12px 28px rgba(21,48,27,.08); transform: translateY(-2px); }
-  .date-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--moss-light);
-    color: var(--moss-dark);
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 700;
-    width: fit-content;
-  }
-  .card h3 { font-size: 20px; line-height: 1.3; }
-  .card p { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
-  .card .btn { margin-top: auto; width: fit-content; }
+  .card:hover { transform: translateY(-3px); }
+  .card .date { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold); }
+  .card h3 { font-size: 30px; }
+  .card p { font-size: 14.5px; color: var(--ink-soft); }
+  .card .btn { margin-top: auto; }
 
-  /* lidmaatschap */
-  .lidmaatschap { background: var(--moss-dark); color: var(--cream-text); }
-  .lidmaatschap-copy { display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
-  .lidmaatschap-copy h2 { color: var(--cream-text); font-size: clamp(28px, 3.4vw, 36px); line-height: 1.15; }
-  .lidmaatschap-copy p { font-size: 16px; line-height: 1.7; opacity: .88; }
-  .benefits { display: flex; flex-direction: column; gap: 12px; padding: 0; margin: 8px 0 0; list-style: none; }
-  .benefits li { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+  .lid-wrap { display: grid; gap: 34px; }
+  @media (min-width: 880px) { .lid-wrap { grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; } }
+  .lid-copy { display: grid; gap: 16px; align-content: start; }
+  .lid-copy h2 { font-size: clamp(34px, 6vw, 58px); }
+  .lid-copy p { color: var(--ink-soft); max-width: 38ch; }
+  .price { font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; }
+  .price small { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
 
-  .form-card {
-    background: var(--card-bg);
-    color: var(--ink);
-    border-radius: 18px;
-    padding: 32px;
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .form-card h3 { font-size: 19px; }
-  .form-card p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
-
-  /* google form embed — herbruikbaar, zie <div class="gform" data-google-form="..."> */
-  .gform {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    background: var(--card-bg);
-  }
+  .form-card { background: var(--card); color: var(--card-ink); border-radius: 4px; overflow: hidden; box-shadow: 0 40px 90px -44px rgba(0,0,0,.7); }
+  .form-card .fc-bar { background: var(--gold); color: #1B2A12; padding: 14px 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .form-card .fc-bar h3 { font-size: 22px; }
+  .form-card .fc-bar a { font-family: 'Inter', sans-serif; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: #1B2A12; border-bottom: 1px solid currentColor; }
+  .form-card .fc-body { padding: 10px; }
+  .gform { border: 1px solid var(--card-line); border-radius: 3px; overflow: hidden; background: #fff; }
   .gform iframe { display: block; width: 100%; border: 0; }
-  .gform.gform-fallback {
-    padding: 20px 24px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-  }
+  .gform.gform-fallback { padding: 22px; font-size: 14px; color: var(--card-soft); }
 
-  /* modal — aanmelden bij een activiteit */
-  .modal {
-    inset: 0;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    max-width: none;
-    max-height: none;
-    background: transparent;
-    overflow: hidden;
-  }
+  footer { border-top: 1px solid var(--hair); background: var(--bg-2); }
+  .foot { display: grid; gap: 28px; padding: 54px 0 20px; }
+  @media (min-width: 720px) { .foot { grid-template-columns: 1.5fr 1fr 1fr; gap: 44px; } }
+  .foot p, .foot a { font-size: 13.5px; color: var(--ink-soft); }
+  .foot a:hover { color: var(--ink); }
+  .foot-label { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: .16em; font-size: 10.5px; color: var(--gold); margin-bottom: 12px; }
+  .foot-col a { display: block; margin-top: 6px; }
+  .foot-bottom { border-top: 1px solid var(--hair); padding: 18px 0 40px; font-size: 12px; color: var(--ink-soft); }
+
+  .modal { inset: 0; margin: 0; border: 0; padding: 0; max-width: none; max-height: none; background: transparent; }
   .modal[open] { display: flex; align-items: center; justify-content: center; }
-  .modal::backdrop { background: rgba(21,48,27,.55); }
-  .modal-panel {
-    position: relative;
-    width: calc(100% - 40px);
-    max-width: 480px;
-    background: var(--card-bg);
-    color: var(--ink);
-    border-radius: 18px;
-    padding: 32px;
-  }
-  .modal-panel h3 { font-size: 20px; padding-right: 28px; }
-  .modal-body { margin-top: 12px; font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
-  .modal-body a { color: var(--moss); text-decoration: underline; }
-  .modal-close {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    width: 32px;
-    height: 32px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: 0;
-    border-radius: 8px;
-    font-size: 22px;
-    line-height: 1;
-    color: var(--ink-soft);
-    cursor: pointer;
-  }
-  .modal-close:hover { background: var(--bg-alt); color: var(--ink); }
-
-  /* footer */
-  footer { background: var(--moss-dark); color: var(--cream-text); padding: 64px 40px 32px; }
-  .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; }
-  .footer-brand { display: flex; flex-direction: column; gap: 14px; }
-  .footer-brand .logo span { color: var(--cream-text); }
-  .footer-brand p { font-size: 14px; line-height: 1.6; opacity: .75; max-width: 280px; }
-  .footer-col { display: flex; flex-direction: column; gap: 14px; }
-  .footer-label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; opacity: .65; }
-  .contact-row { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; opacity: .9; }
-  .footer-col a { color: var(--cream-text); opacity: .85; font-size: 14.5px; }
-  .footer-col a:hover { opacity: 1; }
-  .footer-bottom { max-width: 1200px; margin: 48px auto 0; border-top: 1px solid rgba(248,245,236,.12); padding-top: 24px; font-size: 13px; opacity: .55; }
-
-  @media (max-width: 760px) {
-    header { padding: 18px 20px; }
-    nav.links a.navlink { display: none; }
-    .wrap, section, .footer-grid, .footer-bottom { padding-left: 20px; padding-right: 20px; }
-    .over-ons, .cards, .footer-grid { grid-template-columns: 1fr; }
-    .over-ons { gap: 36px; }
-    .footer-grid { gap: 32px; }
-    .hero { padding-left: 20px; padding-right: 20px; }
-    .hero .ctas { flex-direction: column; width: 100%; }
-    .hero .ctas .btn { width: 100%; }
-  }
+  .modal::backdrop { background: rgba(7,15,10,.64); }
+  .modal-panel { position: relative; width: calc(100% - 36px); max-width: 440px; background: var(--card); color: var(--card-ink); border-radius: 4px; overflow: hidden; }
+  .modal-panel .bar { background: var(--gold); color: #1B2A12; padding: 14px 22px; font-family: 'Cormorant Garamond', serif; font-size: 24px; }
+  .modal-body { padding: 22px; font-size: 15px; color: var(--card-soft); }
+  .modal-body a { color: #7C6526; border-bottom: 1px solid currentColor; }
+  .modal-close { position: absolute; top: 8px; right: 12px; width: 32px; height: 32px; background: none; border: 0; font-size: 22px; color: #1B2A12; cursor: pointer; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M2 21C7 14 12 13 16 17C20 13 25 14 30 21C24 18 20.5 18.5 16 23C11.5 18.5 8 18 2 21Z" fill="#346C42"/></svg>
-    <span>Vogelpark</span>
+  <div class="header-in">
+    <a class="logo" href="#top" aria-label="Vogelpark — naar boven">
+      <svg class="bird" viewBox="0 0 96 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 42C24 40 34 30 44 16C48 10 54 10 58 18"/>
+        <path d="M44 16C56 22 74 22 90 12C82 26 68 34 52 32"/>
+      </svg>
+      <span class="wm">Vogelpark</span>
+    </a>
+    <nav class="links">
+      <a href="#over-ons">Over ons</a>
+      <a href="#activiteiten">Activiteiten</a>
+      <a href="#lidmaatschap">Lidmaatschap</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#lidmaatschap">Lid worden</a>
+    </nav>
   </div>
-  <nav class="links">
-    <a class="navlink" href="#over-ons">Over ons</a>
-    <a class="navlink" href="#activiteiten">Activiteiten</a>
-    <a class="navlink" href="#lidmaatschap">Lidmaatschap</a>
-    <a class="navlink" href="#contact">Contact</a>
-    <a class="btn btn-primary btn-sm" href="#lidmaatschap">Lid worden</a>
-  </nav>
 </header>
 
+<main id="top">
 <section class="hero">
-  <svg class="hero-deco" viewBox="0 0 280 240" fill="none">
-    <path d="M12 224 C 70 176, 110 150, 150 108 C 180 78, 210 56, 268 16" stroke="#346C42" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <ellipse cx="60" cy="196" rx="16" ry="8" transform="rotate(-40 60 196)" fill="#346C42" opacity=".55"/>
-    <ellipse cx="95" cy="168" rx="15" ry="7.5" transform="rotate(-38 95 168)" fill="#346C42" opacity=".55"/>
-    <ellipse cx="135" cy="130" rx="15" ry="7.5" transform="rotate(-42 135 130)" fill="#346C42" opacity=".55"/>
-    <ellipse cx="185" cy="82" rx="14" ry="7" transform="rotate(-40 185 82)" fill="#346C42" opacity=".55"/>
-    <ellipse cx="230" cy="42" rx="13" ry="6.5" transform="rotate(-38 230 42)" fill="#346C42" opacity=".55"/>
-    <path d="M150 178 C 158 172 168 172 176 178 C 168 176 163 178 158 184 C 153 178 148 176 140 178 Z" fill="#9A5505" opacity=".75"/>
-    <path d="M195 100 C 203 94 213 94 221 100 C 213 98 208 100 203 106 C 198 100 193 98 185 100 Z" fill="#9A5505" opacity=".75"/>
+  <svg class="hero-bird" viewBox="0 0 300 240" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 210 C 90 205 120 180 140 140 C 150 120 165 96 180 120 C 150 118 150 150 156 176"/>
+    <path d="M140 140 C 170 150 210 150 250 120 C 236 150 210 176 176 176"/>
+    <path d="M180 120 C 196 108 220 104 236 96"/>
+    <circle cx="176" cy="122" r="2.4" fill="currentColor" stroke="none"/>
   </svg>
-  <span class="kicker">Buurtvereniging</span>
-  <h1>Vogelpark</h1>
-  <p class="lede">Buurtvereniging Vogelpark organiseert activiteiten in de wijk Vogelpark in Leende en behartigt de belangen van bewoners bij de gemeente.</p>
-  <p class="postcodes">Wijk Vogelpark, Leende — postcodes 5595 BA e.o.</p>
-  <div class="ctas">
-    <a class="btn btn-primary" href="#lidmaatschap">Lid worden</a>
-    <a class="btn btn-outline" href="#activiteiten">Activiteiten</a>
+  <div class="wrap">
+    <div class="inner">
+      <span class="kicker">Buurtvereniging &middot; Leende</span>
+      <h1>Vogelpark</h1>
+      <p class="lede">Activiteiten voor de wijk Vogelpark in Leende, en belangenbehartiging richting de gemeente.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#lidmaatschap">Lid worden</a>
+        <a class="btn btn-ghost" href="#activiteiten">Activiteiten</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="over-ons">
-  <div class="section-inner over-ons">
-    <div class="over-ons-copy">
-      <span class="kicker">Over ons</span>
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="over-ons" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-n="01">Over ons</span>
       <h2>Over de vereniging</h2>
-      <p>Buurtvereniging Vogelpark organiseert activiteiten voor bewoners van de wijk Vogelpark in Leende, onderhoudt het contact tussen buren en behartigt de belangen van de wijk bij de gemeente.</p>
-      <p>Bewoners van de wijk kunnen lid worden. Activiteiten zijn voor leden en oud-bewoners; bewoners die geen lid zijn, kunnen ook deelnemen.</p>
     </div>
-    <div class="over-ons-art">
-      <svg width="260" height="220" viewBox="0 0 280 240" fill="none">
-        <path d="M12 224 C 70 176, 110 150, 150 108 C 180 78, 210 56, 268 16" stroke="#2C5A38" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-        <ellipse cx="60" cy="196" rx="17" ry="8.5" transform="rotate(-40 60 196)" fill="#2C5A38" opacity=".7"/>
-        <ellipse cx="95" cy="168" rx="16" ry="8" transform="rotate(-38 95 168)" fill="#2C5A38" opacity=".7"/>
-        <ellipse cx="135" cy="130" rx="16" ry="8" transform="rotate(-42 135 130)" fill="#2C5A38" opacity=".7"/>
-        <ellipse cx="185" cy="82" rx="15" ry="7.5" transform="rotate(-40 185 82)" fill="#2C5A38" opacity=".7"/>
-        <ellipse cx="230" cy="42" rx="14" ry="7" transform="rotate(-38 230 42)" fill="#2C5A38" opacity=".7"/>
-        <path d="M150 178 C 160 171 172 171 182 178 C 172 176 166 179 160 186 C 154 179 148 176 138 178 Z" fill="#9A5505" opacity=".85"/>
-        <path d="M195 100 C 205 93 217 93 227 100 C 217 98 211 101 205 108 C 199 101 193 98 183 100 Z" fill="#9A5505" opacity=".85"/>
-      </svg>
+    <div class="prose">
+      <p>Buurtvereniging Vogelpark organiseert buurtactiviteiten, onderhoudt het contact tussen buren en behartigt de belangen van de wijk bij de gemeente.</p>
+      <p>Bewoners van de wijk kunnen lid worden. Activiteiten staan open voor leden, oud-bewoners en bewoners zonder lidmaatschap.</p>
     </div>
   </div>
 </section>
 
-<section id="activiteiten" class="band-alt">
-  <div class="section-inner">
-    <div class="activiteiten-head">
-      <span class="kicker">Agenda</span>
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="activiteiten" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-n="02">Agenda</span>
       <h2>Aankomende activiteiten</h2>
-      <p>Voor leden en oud-bewoners. Bewoners van de wijk die geen lid zijn, kunnen ook deelnemen.</p>
+      <p>Open voor leden, oud-bewoners en bewoners van de wijk.</p>
     </div>
     <div class="cards">
       <div class="card">
-        <div class="date-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
-          Zo 13 sep 2026
-        </div>
+        <span class="date">Zo 13 sep 2026</span>
         <h3>Jeu de boules-toernooi</h3>
-        <p>Jaarlijks jeu de boules toernooi inclusief bbq. Voor alle leeftijden, ook zonder ervaring.</p>
-        <button class="btn btn-outline btn-sm" data-aanmeld="Jeu de boules-toernooi">Aanmelden</button>
+        <p>Jaarlijks toernooi met bbq. Alle leeftijden, ook zonder ervaring.</p>
+        <button class="btn btn-ghost btn-sm btn-block" data-aanmeld="Jeu de boules-toernooi">Aanmelden</button>
       </div>
       <div class="card">
-        <div class="date-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
-          Vr 30 okt 2026
-        </div>
+        <span class="date">Vr 30 okt 2026</span>
         <h3>Halloween</h3>
-        <p>Halloweentocht door de wijk. Kinderen die durven kunnen langs de deuren voor een traktatie.</p>
-        <button class="btn btn-outline btn-sm" data-aanmeld="Halloween">Aanmelden</button>
+        <p>Tocht door de wijk; kinderen langs de deuren voor een traktatie.</p>
+        <button class="btn btn-ghost btn-sm btn-block" data-aanmeld="Halloween">Aanmelden</button>
       </div>
     </div>
   </div>
 </section>
 
-<section id="lidmaatschap" class="lidmaatschap">
-  <div class="section-inner">
-    <div class="lidmaatschap-copy">
-      <span class="kicker" style="color:#9FCBA9;">Lidmaatschap</span>
-      <h2>Lid worden</h2>
-      <p>De contributie is € 30,- per jaar. Leden krijgen korting op activiteiten, ontvangen de nieuwsbrief en hebben stemrecht op de ledenvergadering.</p>
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="lidmaatschap" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-n="03">Lidmaatschap</span>
     </div>
-    <div class="form-card">
-      <h3>Aanmeldformulier</h3>
-      <p>Het volledige aanmeldformulier staat in Google Forms. Vul het hieronder in, of <a href="https://docs.google.com/forms/d/e/VERVANG_MET_FORM_ID/viewform" target="_blank" rel="noopener">open het in een nieuw tabblad</a>.</p>
-      <div class="gform"
-           data-google-form="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform"
-           data-height="1100"
-           data-title="Aanmeldformulier lidmaatschap Vogelpark"></div>
+    <div class="lid-wrap">
+      <div class="lid-copy">
+        <h2>Lid worden</h2>
+        <p class="price">&euro;&thinsp;30 <small>per jaar</small></p>
+        <p>Korting op activiteiten en de nieuwsbrief.</p>
+      </div>
+      <div class="form-card">
+        <div class="fc-bar">
+          <h3>Aanmeldformulier</h3>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform" target="_blank" rel="noopener">Nieuw tabblad</a>
+        </div>
+        <div class="fc-body">
+          <div class="gform"
+               data-google-form="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform"
+               data-height="1100"
+               data-title="Aanmeldformulier lidmaatschap Vogelpark"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer id="contact">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo">
-        <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M2 21C7 14 12 13 16 17C20 13 25 14 30 21C24 18 20.5 18.5 16 23C11.5 18.5 8 18 2 21Z" fill="#9FCBA9"/></svg>
-        <span>Vogelpark</span>
-      </div>
-      <p>Buurtvereniging voor de wijk Vogelpark in Leende.</p>
+  <div class="wrap foot">
+    <div>
+      <a class="logo logo-stack" href="#top" aria-label="Vogelpark — naar boven">
+        <svg class="bird" viewBox="0 0 96 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 42C24 40 34 30 44 16C48 10 54 10 58 18"/>
+          <path d="M44 16C56 22 74 22 90 12C82 26 68 34 52 32"/>
+        </svg>
+        <span class="wm">Vogelpark</span>
+        <span class="tag">Buurtvereniging Leende</span>
+      </a>
+      <p style="margin-top:14px;max-width:32ch">Buurtvereniging voor de wijk Vogelpark, Leende.</p>
     </div>
-    <div class="footer-col">
-      <span class="footer-label">Contact</span>
-      <div class="contact-row">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;margin-top:2px;"><path d="M12 21s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <span>Vogelpark, Leende<br>5595 BA e.o.</span>
-      </div>
-      <div class="contact-row">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        <a href="mailto:leendevogelpark@gmail.com">leendevogelpark@gmail.com</a>
-      </div>
+    <div class="foot-col">
+      <div class="foot-label">Contact</div>
+      <p>Vogelpark, Leende &middot; 5595 BA e.o.</p>
+      <a href="mailto:leendevogelpark@gmail.com">leendevogelpark@gmail.com</a>
     </div>
-    <div class="footer-col">
-      <span class="footer-label">Snel naar</span>
+    <div class="foot-col">
+      <div class="foot-label">Snel naar</div>
       <a href="#over-ons">Over ons</a>
       <a href="#activiteiten">Activiteiten</a>
       <a href="#lidmaatschap">Lidmaatschap</a>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Buurtvereniging Vogelpark, Leende</div>
+  <div class="wrap"><div class="foot-bottom">&copy; 2026 Buurtvereniging Vogelpark, Leende</div></div>
 </footer>
 
 <dialog id="aanmeld-modal" class="modal" aria-labelledby="aanmeld-modal-title">
   <div class="modal-panel">
     <button type="button" class="modal-close" aria-label="Sluiten">&times;</button>
-    <h3 id="aanmeld-modal-title">Aanmelden</h3>
+    <div class="bar" id="aanmeld-modal-title">Aanmelden</div>
     <div class="modal-body" id="aanmeld-modal-body"></div>
   </div>
 </dialog>
 
 <script>
   /*
-   * Google Form embedden — overal op de pagina bruikbaar.
-   * Plaats waar je het formulier wilt:
-   *
-   *   <div class="gform"
-   *        data-google-form="https://docs.google.com/forms/d/e/FORM_ID/viewform"
-   *        data-height="900"
-   *        data-title="Omschrijving van het formulier"></div>
-   *
-   * De link haal je in Google Forms op via Verzenden > < > (insluiten).
-   * data-height is optioneel (standaard 800). embedded=true wordt automatisch toegevoegd.
+   * Google Form embedden — herbruikbaar. Plaats waar je het formulier wilt:
+   *   <div class="gform" data-google-form="https://docs.google.com/forms/d/e/FORM_ID/viewform" data-height="900" data-title="Omschrijving"></div>
+   * De link haal je in Google Forms op via Verzenden > < > (insluiten). embedded=true wordt automatisch toegevoegd.
    */
   (function () {
     var blocks = document.querySelectorAll('.gform[data-google-form]');
     for (var i = 0; i < blocks.length; i++) {
       (function (el) {
         var url = (el.getAttribute('data-google-form') || '').trim();
-        var ok = /^https:\/\/docs\.google\.com\/forms\/.+\/viewform/.test(url);
-
-        if (!ok) {
+        if (!/^https:\/\/docs\.google\.com\/forms\/.+\/viewform/.test(url)) {
           el.classList.add('gform-fallback');
           el.textContent = 'Formulier nog niet gekoppeld — zet de Google Forms-link in het data-google-form attribuut.';
           return;
         }
-
-        var src = url.indexOf('embedded=true') !== -1
-          ? url
-          : url + (url.indexOf('?') === -1 ? '?' : '&') + 'embedded=true';
-
-        var iframe = document.createElement('iframe');
-        iframe.src = src;
-        iframe.height = el.getAttribute('data-height') || '800';
-        iframe.setAttribute('width', '100%');
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('marginheight', '0');
-        iframe.setAttribute('marginwidth', '0');
-        iframe.loading = 'lazy';
-        iframe.title = el.getAttribute('data-title') || 'Formulier';
-        iframe.textContent = 'Formulier laden…';
-
-        el.textContent = '';
-        el.appendChild(iframe);
+        var src = url.indexOf('embedded=true') !== -1 ? url : url + (url.indexOf('?') === -1 ? '?' : '&') + 'embedded=true';
+        var f = document.createElement('iframe');
+        f.src = src; f.height = el.getAttribute('data-height') || '800';
+        f.setAttribute('width', '100%'); f.loading = 'lazy';
+        f.title = el.getAttribute('data-title') || 'Formulier';
+        f.textContent = 'Formulier laden…';
+        el.textContent = ''; el.appendChild(f);
       })(blocks[i]);
     }
-  })();
 
-  /*
-   * Aanmeld-modal voor activiteiten.
-   * Knop: <button class="btn btn-outline btn-sm" data-aanmeld="Naam activiteit">Aanmelden</button>
-   * Zodra er een formulier is: vervang de tekst hieronder door bijv.
-   *   bodyEl.innerHTML = '<div class="gform" data-google-form="..." data-height="900"></div>';
-   * en roep daarna dezelfde init-lus voor .gform aan, of zet een vaste embed per activiteit.
-   */
-  (function () {
+    /* Aanmeld-modal voor activiteiten. Knop: <button data-aanmeld="Naam activiteit">Aanmelden</button>
+       Zodra er een formulier is: zet in bodyEl een <div class="gform" data-google-form="..."></div>. */
     var modal = document.getElementById('aanmeld-modal');
     if (!modal || typeof modal.showModal !== 'function') return;
-    var titleEl = document.getElementById('aanmeld-modal-title');
-    var bodyEl = document.getElementById('aanmeld-modal-body');
-
-    var buttons = document.querySelectorAll('[data-aanmeld]');
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', function () {
-        titleEl.textContent = this.getAttribute('data-aanmeld') || 'Aanmelden';
-        bodyEl.innerHTML = '<p>Het aanmeldformulier volgt. Houd de site in de gaten of mail naar ' +
-          '<a href="mailto:leendevogelpark@gmail.com">leendevogelpark@gmail.com</a>.</p>';
+    var t = document.getElementById('aanmeld-modal-title');
+    var b = document.getElementById('aanmeld-modal-body');
+    var btns = document.querySelectorAll('[data-aanmeld]');
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].addEventListener('click', function () {
+        t.textContent = this.getAttribute('data-aanmeld') || 'Aanmelden';
+        b.innerHTML = '<p>Het aanmeldformulier volgt. Houd de site in de gaten of mail naar <a href="mailto:leendevogelpark@gmail.com">leendevogelpark@gmail.com</a>.</p>';
         modal.showModal();
       });
     }
