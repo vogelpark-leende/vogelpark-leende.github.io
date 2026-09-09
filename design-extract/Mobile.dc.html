@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { text-decoration: none; }
+    a.textlink { color: oklch(48% 0.09 150); }
+    a.footerlink { color: oklch(90% 0.015 90); opacity: 0.85; }
+  </style>
+</helmet>
+
+<div style="width:390px; background:oklch(97% 0.016 90); font-family:'Work Sans', sans-serif; color:oklch(24% 0.03 140);">
+
+  <!-- HEADER -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:18px 20px;">
+    <div style="display:flex; align-items:center; gap:9px;">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 21C7 14 12 13 16 17C20 13 25 14 30 21C24 18 20.5 18.5 16 23C11.5 18.5 8 18 2 21Z" fill="oklch(48% 0.09 150)"/>
+      </svg>
+      <span style="font-family:'Spectral',serif; font-size:19px; font-weight:600; color:oklch(22% 0.03 140);">Vogelpark</span>
+    </div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="oklch(30% 0.03 140)" stroke-width="1.9" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; overflow:hidden; padding:44px 24px 56px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
+    <div style="position:absolute; top:-10px; right:-40px; opacity:0.25; pointer-events:none;">
+      <svg width="180" height="150" viewBox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 224 C 70 176, 110 150, 150 108 C 180 78, 210 56, 268 16" stroke="oklch(48% 0.09 150)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <ellipse cx="95" cy="168" rx="16" ry="8" transform="rotate(-38 95 168)" fill="oklch(48% 0.09 150)" opacity="0.55"/>
+        <ellipse cx="185" cy="82" rx="15" ry="7.5" transform="rotate(-40 185 82)" fill="oklch(48% 0.09 150)" opacity="0.55"/>
+        <path d="M195 100 C 203 94 213 94 221 100 C 213 98 208 100 203 106 C 198 100 193 98 185 100 Z" fill="oklch(52% 0.12 60)" opacity="0.8"/>
+      </svg>
+    </div>
+    <span style="text-transform:uppercase; letter-spacing:0.16em; font-size:12px; font-weight:700; color:oklch(48% 0.09 150);">Buurtvereniging</span>
+    <h1 style="font-family:'Spectral',serif; font-size:44px; font-weight:600; margin:0; line-height:1.08; color:oklch(20% 0.03 140);">Vogelpark</h1>
+    <p style="font-size:16px; line-height:1.6; color:oklch(40% 0.03 140); margin:0;">Van de jaarlijkse buurtbarbecue tot de kerstborrel op het plein — samen maken we van Vogelpark in Leende een wijk waar iedereen elkaar kent.</p>
+    <p style="font-size:13px; color:oklch(45% 0.03 140); margin:0;">Voor de wijk Vogelpark, Leende — postcodes 5595 BA e.o.</p>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px; width:100%;">
+      <a href="#lidmaatschap" style="display:flex; align-items:center; justify-content:center; background:oklch(52% 0.12 60); color:oklch(98% 0.012 90); font-weight:600; font-size:15px; padding:14px 20px; border-radius:10px;">Word lid</a>
+      <a href="#activiteiten" style="display:flex; align-items:center; justify-content:center; background:transparent; color:oklch(30% 0.05 145); font-weight:600; font-size:15px; padding:12.5px 20px; border-radius:10px; border:1.5px solid oklch(48% 0.09 150);">Bekijk activiteiten</a>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section id="over-ons" style="padding:56px 24px; display:flex; flex-direction:column; gap:28px;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <span style="text-transform:uppercase; letter-spacing:0.16em; font-size:12px; font-weight:700; color:oklch(48% 0.09 150);">Over ons</span>
+      <h2 style="font-family:'Spectral',serif; font-size:28px; font-weight:600; margin:0; line-height:1.2; color:oklch(24% 0.03 140);">Een groene buurt, een hechte gemeenschap</h2>
+      <p style="font-size:15.5px; line-height:1.65; color:oklch(40% 0.03 140); margin:0;">Buurtvereniging Vogelpark zet zich in voor een fijne, groene en sociale wijk in Leende. We organiseren activiteiten voor jong en oud, onderhouden het contact tussen buren en komen op voor de belangen van de buurt bij de gemeente.</p>
+      <p style="font-size:15.5px; line-height:1.65; color:oklch(40% 0.03 140); margin:0;">Of je nu al jaren in Vogelpark woont of net nieuw bent — bij ons ben je vanaf de eerste kop koffie welkom.</p>
+    </div>
+    <div style="background:oklch(94% 0.03 150); border-radius:20px; padding:28px; display:flex; align-items:center; justify-content:center; min-height:220px;">
+      <svg width="220" height="190" viewBox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 224 C 70 176, 110 150, 150 108 C 180 78, 210 56, 268 16" stroke="oklch(45% 0.09 150)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <ellipse cx="60" cy="196" rx="17" ry="8.5" transform="rotate(-40 60 196)" fill="oklch(45% 0.09 150)" opacity="0.7"/>
+        <ellipse cx="95" cy="168" rx="16" ry="8" transform="rotate(-38 95 168)" fill="oklch(45% 0.09 150)" opacity="0.7"/>
+        <ellipse cx="135" cy="130" rx="16" ry="8" transform="rotate(-42 135 130)" fill="oklch(45% 0.09 150)" opacity="0.7"/>
+        <ellipse cx="185" cy="82" rx="15" ry="7.5" transform="rotate(-40 185 82)" fill="oklch(45% 0.09 150)" opacity="0.7"/>
+        <ellipse cx="230" cy="42" rx="14" ry="7" transform="rotate(-38 230 42)" fill="oklch(45% 0.09 150)" opacity="0.7"/>
+        <path d="M150 178 C 160 171 172 171 182 178 C 172 176 166 179 160 186 C 154 179 148 176 138 178 Z" fill="oklch(52% 0.12 60)" opacity="0.85"/>
+        <path d="M195 100 C 205 93 217 93 227 100 C 217 98 211 101 205 108 C 199 101 193 98 183 100 Z" fill="oklch(52% 0.12 60)" opacity="0.85"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ACTIVITEITEN -->
+  <section id="activiteiten" style="background:oklch(94% 0.025 95); padding:56px 24px;">
+    <div style="display:flex; flex-direction:column; gap:36px;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <span style="text-transform:uppercase; letter-spacing:0.16em; font-size:12px; font-weight:700; color:oklch(48% 0.09 150);">Agenda</span>
+        <h2 style="font-family:'Spectral',serif; font-size:28px; font-weight:600; margin:0; color:oklch(24% 0.03 140);">Aankomende activiteiten</h2>
+        <p style="font-size:15.5px; color:oklch(42% 0.03 140); margin:0;">Kom gezellig langs — leden en niet-leden zijn allebei welkom.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+
+        <div style="background:oklch(99% 0.008 90); border:1px solid oklch(88% 0.02 95); border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:oklch(90% 0.05 150); color:oklch(28% 0.06 150); padding:6px 12px; border-radius:999px; font-size:12.5px; font-weight:600; width:fit-content;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+            Za 26 sep 2026
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-size:19px; font-weight:600; margin:0; line-height:1.3; color:oklch(24% 0.03 140);">Burendag Vogelpark</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:oklch(42% 0.03 140); margin:0;">Gezellige buurtbarbecue op het Vogelpark-plein. Neem gerust de (klein)kinderen mee!</p>
+          <a href="#" style="display:inline-flex; align-items:center; justify-content:center; background:transparent; color:oklch(30% 0.05 145); font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:9px; border:1.5px solid oklch(48% 0.09 150); width:fit-content;">Aanmelden</a>
+        </div>
+
+        <div style="background:oklch(99% 0.008 90); border:1px solid oklch(88% 0.02 95); border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:oklch(90% 0.05 150); color:oklch(28% 0.06 150); padding:6px 12px; border-radius:999px; font-size:12.5px; font-weight:600; width:fit-content;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+            Za 17 okt 2026
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-size:19px; font-weight:600; margin:0; line-height:1.3; color:oklch(24% 0.03 140);">Buurtopschoondag</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:oklch(42% 0.03 140); margin:0;">Samen de wijk weer schoon en groen maken — aansluitend koffie met wat lekkers.</p>
+          <a href="#" style="display:inline-flex; align-items:center; justify-content:center; background:transparent; color:oklch(30% 0.05 145); font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:9px; border:1.5px solid oklch(48% 0.09 150); width:fit-content;">Aanmelden</a>
+        </div>
+
+        <div style="background:oklch(99% 0.008 90); border:1px solid oklch(88% 0.02 95); border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:oklch(90% 0.05 150); color:oklch(28% 0.06 150); padding:6px 12px; border-radius:999px; font-size:12.5px; font-weight:600; width:fit-content;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+            Vr 18 dec 2026
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-size:19px; font-weight:600; margin:0; line-height:1.3; color:oklch(24% 0.03 140);">Kerstborrel op het plein</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:oklch(42% 0.03 140); margin:0;">Warme chocolademelk, glühwein en gezelligheid om het jaar samen af te sluiten.</p>
+          <a href="#" style="display:inline-flex; align-items:center; justify-content:center; background:transparent; color:oklch(30% 0.05 145); font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:9px; border:1.5px solid oklch(48% 0.09 150); width:fit-content;">Aanmelden</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIDMAATSCHAP -->
+  <section id="lidmaatschap" style="background:oklch(28% 0.05 150); color:oklch(97% 0.012 90); padding:56px 24px;">
+    <div style="display:flex; flex-direction:column; gap:28px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <span style="text-transform:uppercase; letter-spacing:0.16em; font-size:12px; font-weight:700; color:oklch(80% 0.07 150);">Lidmaatschap</span>
+        <h2 style="font-family:'Spectral',serif; font-size:28px; font-weight:600; margin:0; line-height:1.2;">Word lid van Vogelpark</h2>
+        <p style="font-size:15.5px; line-height:1.65; opacity:0.88; margin:0;">Voor [€ XX,- per jaar] steun je de buurtvereniging en alle activiteiten in de wijk. Als lid ontvang je korting bij events en blijf je via de nieuwsbrief op de hoogte.</p>
+        <ul style="display:flex; flex-direction:column; gap:11px; padding:0; margin:4px 0 0; list-style:none;">
+          <li style="display:flex; align-items:center; gap:9px; font-size:14.5px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(80% 0.07 150)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+            Korting op alle buurtactiviteiten
+          </li>
+          <li style="display:flex; align-items:center; gap:9px; font-size:14.5px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(80% 0.07 150)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+            Digitale nieuwsbrief, 4x per jaar
+          </li>
+          <li style="display:flex; align-items:center; gap:9px; font-size:14.5px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(80% 0.07 150)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+            Meepraten en meebeslissen op de ledenvergadering
+          </li>
+        </ul>
+      </div>
+
+      <div style="background:oklch(99% 0.008 90); color:oklch(24% 0.03 140); border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:14px;">
+        <h3 style="font-family:'Spectral',serif; font-size:18px; font-weight:600; margin:0;">Aanmeldformulier</h3>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:12.5px; font-weight:600; color:oklch(35% 0.03 140);">Naam</label>
+          <div style="border:1px solid oklch(88% 0.02 95); border-radius:8px; padding:11px 13px; color:oklch(55% 0.02 140); background:oklch(97% 0.016 90); font-size:14px;">Voor- en achternaam</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:12.5px; font-weight:600; color:oklch(35% 0.03 140);">E-mailadres</label>
+          <div style="border:1px solid oklch(88% 0.02 95); border-radius:8px; padding:11px 13px; color:oklch(55% 0.02 140); background:oklch(97% 0.016 90); font-size:14px;">naam@voorbeeld.nl</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:12.5px; font-weight:600; color:oklch(35% 0.03 140);">Adres en postcode</label>
+          <div style="border:1px solid oklch(88% 0.02 95); border-radius:8px; padding:11px 13px; color:oklch(55% 0.02 140); background:oklch(97% 0.016 90); font-size:14px;">Straat, huisnummer, 5595 BA</div>
+        </div>
+        <a href="#" style="margin-top:4px; display:flex; align-items:center; justify-content:center; background:oklch(52% 0.12 60); color:oklch(98% 0.012 90); font-weight:600; font-size:14.5px; padding:13px 18px; border-radius:10px;">Ja, ik word lid</a>
+        <p style="font-size:12px; color:oklch(50% 0.02 140); margin:0; text-align:center;">Je ontvangt na aanmelding een bevestiging per e-mail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" style="background:oklch(20% 0.025 140); color:oklch(94% 0.012 90); padding:48px 24px 28px;">
+    <div style="display:flex; flex-direction:column; gap:32px;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:9px;">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 21C7 14 12 13 16 17C20 13 25 14 30 21C24 18 20.5 18.5 16 23C11.5 18.5 8 18 2 21Z" fill="oklch(80% 0.07 150)"/>
+          </svg>
+          <span style="font-family:'Spectral',serif; font-size:18px; font-weight:600;">Vogelpark</span>
+        </div>
+        <p style="font-size:13.5px; line-height:1.6; opacity:0.75; margin:0;">Buurtvereniging voor de wijk Vogelpark, Leende. Voor en door de buurt.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:0.1em; opacity:0.65;">Contact</span>
+        <div style="display:flex; align-items:flex-start; gap:9px; font-size:14px; opacity:0.9;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0; margin-top:2px;"><path d="M12 21s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span>Vogelpark, Leende<br>5595 BA e.o.</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; font-size:14px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a class="footerlink" href="#">[info@vogelpark-leende.nl]</a>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:0.1em; opacity:0.65;">Snel naar</span>
+        <a class="footerlink" href="#over-ons" style="font-size:14px;">Over ons</a>
+        <a class="footerlink" href="#activiteiten" style="font-size:14px;">Activiteiten</a>
+        <a class="footerlink" href="#lidmaatschap" style="font-size:14px;">Lidmaatschap</a>
+      </div>
+    </div>
+    <div style="margin:36px 0 0; border-top:1px solid oklch(94% 0.012 90 / 0.12); padding-top:22px; font-size:12.5px; opacity:0.55;">© 2026 Buurtvereniging Vogelpark, Leende</div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
