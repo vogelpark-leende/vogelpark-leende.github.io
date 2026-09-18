@@ -135,6 +135,8 @@
   .gform { border: 1px solid var(--card-line); border-radius: 3px; overflow: hidden; background: #fff; }
   .gform iframe { display: block; width: 100%; border: 0; }
   .gform.gform-fallback { padding: 22px; font-size: 14px; color: var(--card-soft); }
+  .gform-note { margin-top: 10px; font-size: 12.5px; color: var(--card-soft); }
+  .gform-note a { text-decoration: underline; }
 
   footer { border-top: 1px solid var(--hair); background: var(--bg-2); }
   .foot { display: grid; gap: 28px; padding-block: 54px 20px; }
@@ -264,6 +266,7 @@
                data-google-form="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform"
                data-height="1100"
                data-title="Aanmeldformulier lidmaatschap Vogelpark"></div>
+          <p class="gform-note">Zie onze <a href="privacy.html">privacyverklaring</a> voor hoe we met deze gegevens omgaan.</p>
         </div>
       </div>
     </div>
@@ -359,6 +362,10 @@
           wrap.setAttribute('data-title', 'Aanmeldformulier ' + naam);
           b.appendChild(wrap);
           embedGoogleForm(wrap);
+          var note = document.createElement('p');
+          note.className = 'gform-note';
+          note.innerHTML = 'Zie onze <a href="privacy.html">privacyverklaring</a> voor hoe we met deze gegevens omgaan.';
+          b.appendChild(note);
         } else {
           b.innerHTML = '<p>Het aanmeldformulier volgt. Houd de site in de gaten of mail naar <a href="mailto:leendevogelpark@gmail.com">leendevogelpark@gmail.com</a>.</p>';
         }
