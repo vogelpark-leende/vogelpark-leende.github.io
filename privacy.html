@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buurtvereniging Vogelpark — Leende</title>
-<meta name="description" content="Buurtvereniging Vogelpark in Leende — activiteiten in de wijk en lidmaatschap.">
+<title>Privacyverklaring — Vogelpark</title>
+<meta name="description" content="Privacyverklaring van Buurtvereniging Vogelpark, Leende: welke gegevens we verwerken, waarom, en welke rechten je hebt.">
+<meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M3 20 Q 11 8 16 18 Q 21 8 29 20' fill='none' stroke='%23E0B458' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
   @font-face {
@@ -48,7 +49,6 @@
     font-size: 11px; font-weight: 600; color: var(--gold);
     display: inline-flex; align-items: center; gap: 10px;
   }
-  .kicker::before { content: attr(data-n); font-family: 'Cormorant Garamond', serif; font-size: 18px; letter-spacing: 0; color: var(--gold); opacity: .8; }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -61,9 +61,7 @@
   .btn-ghost { background: transparent; color: var(--gold); }
   .btn-ghost:hover { background: rgba(224,180,88,.12); }
   .btn-sm { padding: 11px 20px; font-size: 13px; }
-  .btn-block { width: 100%; }
 
-  /* logo — vogel in vlucht (lijn) + woordmerk */
   .logo { display: inline-flex; align-items: center; gap: 11px; color: var(--gold); }
   .logo .bird { width: 46px; height: auto; flex: none; }
   .logo .wm { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 25px; letter-spacing: .01em; color: var(--ink); }
@@ -86,55 +84,25 @@
   nav.links a.btn-primary { color: #17230F; font-weight: 600; }
   @media (min-width: 900px) { nav.links { display: flex; } }
 
-  .hero { position: relative; overflow: hidden; padding: 64px 0 52px; }
-  @media (min-width: 720px) { .hero { padding: 116px 0 96px; } }
-  .hero-bird { position: absolute; right: -40px; bottom: -20px; width: min(440px, 60%); color: var(--gold); opacity: .12; pointer-events: none; }
-  .hero .inner { position: relative; z-index: 1; display: grid; gap: 20px; max-width: 20ch; }
-  .hero h1 { font-size: clamp(60px, 15vw, 128px); letter-spacing: -.01em; }
-  .hero .lede { max-width: 42ch; font-size: 18px; color: var(--ink-soft); font-family: 'Inter', sans-serif; }
-  .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
-
   .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep), transparent); opacity: .5; }
 
   .sec { padding: 58px 0; }
-  @media (min-width: 720px) { .sec { padding: 100px 0; } }
-  .sec-head { display: grid; gap: 14px; margin-bottom: 36px; max-width: 62ch; }
-  .sec-head h2 { font-size: clamp(34px, 6vw, 58px); }
+  @media (min-width: 720px) { .sec { padding: 84px 0; } }
+  .sec-head { display: grid; gap: 14px; margin-bottom: 20px; max-width: 62ch; }
+  .sec-head h1 { font-size: clamp(34px, 6vw, 54px); }
   .sec-head p { color: var(--ink-soft); font-size: 15px; }
+  .updated { color: var(--ink-soft); font-size: 13px; margin-bottom: 46px; display: block; }
 
-  .prose { max-width: 60ch; display: grid; gap: 16px; color: var(--ink-soft); font-size: 16.5px; }
-
-  .cards { display: grid; gap: 22px; }
-  @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
-  .card {
-    background: var(--bg-2); border: 1px solid var(--hair); border-left: 3px solid var(--gold);
-    border-radius: 3px; padding: 30px; display: flex; flex-direction: column; gap: 14px;
-    transition: transform .18s ease, border-color .18s ease;
-  }
-  .card:hover { transform: translateY(-3px); }
-  .card .date { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--gold); }
-  .card h3 { font-size: 30px; }
-  .card p { font-size: 14.5px; color: var(--ink-soft); }
-  .card .btn { margin-top: auto; }
-  .card-cta { background: transparent; border: 1px dashed var(--hair); border-left: 3px dashed var(--gold); justify-content: center; text-align: center; }
-  .card-cta .btn { margin-top: 0; }
-
-  .lid-wrap { display: grid; gap: 34px; }
-  @media (min-width: 880px) { .lid-wrap { grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; } }
-  .lid-copy { display: grid; gap: 16px; align-content: start; }
-  .lid-copy h2 { font-size: clamp(34px, 6vw, 58px); }
-  .lid-copy p { color: var(--ink-soft); max-width: 38ch; }
-  .price { font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; }
-  .price small { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
-
-  .form-card { background: var(--card); color: var(--card-ink); border-radius: 4px; overflow: hidden; box-shadow: 0 40px 90px -44px rgba(0,0,0,.7); }
-  .form-card .fc-bar { background: var(--gold); color: #1B2A12; padding: 14px 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .form-card .fc-bar h3 { font-size: 22px; }
-  .form-card .fc-bar a { font-family: 'Inter', sans-serif; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: #1B2A12; border-bottom: 1px solid currentColor; }
-  .form-card .fc-body { padding: 10px; }
-  .gform { border: 1px solid var(--card-line); border-radius: 3px; overflow: hidden; background: #fff; }
-  .gform iframe { display: block; width: 100%; border: 0; }
-  .gform.gform-fallback { padding: 22px; font-size: 14px; color: var(--card-soft); }
+  .legal { max-width: 72ch; display: grid; gap: 38px; }
+  .legal section { display: grid; gap: 12px; }
+  .legal h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .legal h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--ink); margin-top: 6px; }
+  .legal p, .legal li { color: var(--ink-soft); font-size: 15.5px; }
+  .legal ul, .legal ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+  .legal strong { color: var(--ink); font-weight: 600; }
+  .legal table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 14.5px; }
+  .legal th, .legal td { text-align: left; padding: 10px 14px; border: 1px solid var(--hair); color: var(--ink-soft); vertical-align: top; }
+  .legal th { color: var(--ink); font-weight: 600; background: var(--bg-2); }
 
   footer { border-top: 1px solid var(--hair); background: var(--bg-2); }
   .foot { display: grid; gap: 28px; padding-block: 54px 20px; }
@@ -147,6 +115,10 @@
   .foot-col .link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
   .foot-col .link-btn:hover { color: var(--gold); }
   .foot-bottom { border-top: 1px solid var(--hair); padding-block: 18px 40px; font-size: 12px; color: var(--ink-soft); }
+
+  .gform { border: 1px solid var(--card-line); border-radius: 3px; overflow: hidden; background: #fff; }
+  .gform iframe { display: block; width: 100%; border: 0; }
+  .gform.gform-fallback { padding: 22px; font-size: 14px; color: var(--card-soft); }
 
   .modal { inset: 0; margin: 0; width: 100%; height: 100%; border: 0; padding: 0; max-width: none; max-height: none; background: transparent; }
   .modal[open] { display: flex; align-items: center; justify-content: center; }
@@ -162,7 +134,7 @@
 
 <header>
   <div class="header-in">
-    <a class="logo" href="#top" aria-label="Vogelpark — naar boven">
+    <a class="logo" href="index.html" aria-label="Vogelpark — naar home">
       <svg class="bird" viewBox="0 0 96 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M6 42C24 40 34 30 44 16C48 10 54 10 58 18"/>
         <path d="M44 16C56 22 74 22 90 12C82 26 68 34 52 32"/>
@@ -170,102 +142,128 @@
       <span class="wm">Vogelpark</span>
     </a>
     <nav class="links">
-      <a href="#over-ons">Over ons</a>
-      <a href="#activiteiten">Activiteiten</a>
-      <a href="#lidmaatschap">Lidmaatschap</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn-primary btn-sm" href="#lidmaatschap">Lid worden</a>
+      <a href="index.html#over-ons">Over ons</a>
+      <a href="index.html#activiteiten">Activiteiten</a>
+      <a href="index.html#lidmaatschap">Lidmaatschap</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="index.html#lidmaatschap">Lid worden</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <svg class="hero-bird" viewBox="0 0 300 240" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M40 210 C 90 205 120 180 140 140 C 150 120 165 96 180 120 C 150 118 150 150 156 176"/>
-    <path d="M140 140 C 170 150 210 150 250 120 C 236 150 210 176 176 176"/>
-    <path d="M180 120 C 196 108 220 104 236 96"/>
-    <circle cx="176" cy="122" r="2.4" fill="currentColor" stroke="none"/>
-  </svg>
-  <div class="wrap">
-    <div class="inner">
-      <span class="kicker">Buurtvereniging &middot; Leende</span>
-      <h1>Vogelpark</h1>
-      <p class="lede">Activiteiten voor de wijk Vogelpark in Leende, en belangenbehartiging richting de gemeente.</p>
-      <div class="ctas">
-        <a class="btn btn-primary" href="#lidmaatschap">Lid worden</a>
-        <a class="btn btn-ghost" href="#activiteiten">Activiteiten</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><div class="divider"></div></div>
-
-<section id="over-ons" class="sec">
+<main>
+<section class="sec">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker" data-n="01">Over ons</span>
-      <h2>Over de vereniging</h2>
+      <span class="kicker">Privacy</span>
+      <h1>Privacyverklaring</h1>
+      <p>Hoe Buurtvereniging Vogelpark omgaat met jouw persoonsgegevens.</p>
     </div>
-    <div class="prose">
-      <p>Buurtvereniging Vogelpark organiseert buurtactiviteiten, onderhoudt het contact tussen buren en behartigt de belangen van de wijk bij de gemeente.</p>
-      <p>Bewoners van de wijk kunnen lid worden. Activiteiten staan open voor leden, oud-bewoners en bewoners zonder lidmaatschap.</p>
-    </div>
-  </div>
-</section>
+    <span class="updated">Laatst bijgewerkt: 18 september 2026</span>
 
-<div class="wrap"><div class="divider"></div></div>
+    <div class="legal">
 
-<section id="activiteiten" class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" data-n="02">Agenda</span>
-      <h2>Aankomende activiteiten</h2>
-      <p>Open voor leden, oud-bewoners en bewoners van de wijk.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <span class="date">Vr 30 okt 2026</span>
-        <h3>Halloween</h3>
-        <p>Tocht door de wijk; kinderen langs de deuren voor een traktatie.</p>
-        <button class="btn btn-ghost btn-sm btn-block" data-aanmeld="Halloween"
-                data-aanmeld-form="https://docs.google.com/forms/d/e/1FAIpQLSdC5z9wtZvD8Lbnp7WxztXHamSu_mg2HCXJoguRAH3X1F1cZA/viewform">Aanmelden</button>
-      </div>
-      <div class="card card-cta">
-        <h3>Eigen idee?</h3>
-        <p>Heb je zelf een idee voor een activiteit? Laat het ons weten!</p>
-        <button class="btn btn-primary btn-sm btn-block" data-aanmeld="Suggestie voor een activiteit"
-                data-aanmeld-form="https://docs.google.com/forms/d/e/1FAIpQLSeMO9JP78zW1InZ7FRnGcCSEMMEHyiNKzTwivElNd3t3hNq5Q/viewform">Laat het ons weten</button>
-      </div>
-    </div>
-  </div>
-</section>
+      <section>
+        <h2>01 — Wie we zijn</h2>
+        <h3>Verwerkingsverantwoordelijke</h3>
+        <p>Buurtvereniging Vogelpark, gevestigd in de wijk Vogelpark, Leende, is verantwoordelijk voor de verwerking van persoonsgegevens die via deze website worden verzameld. Voor vragen over deze verklaring of over je gegevens kun je terecht bij:</p>
+        <p><strong>E-mail:</strong> <a href="mailto:leendevogelpark@gmail.com" style="text-decoration:underline">leendevogelpark@gmail.com</a><br><strong>Adres:</strong> Vogelpark, Leende</p>
+      </section>
 
-<div class="wrap"><div class="divider"></div></div>
+      <section>
+        <h2>02 — Welke gegevens we verwerken en waarom</h2>
+        <p>We verzamelen alleen de gegevens die je zelf invult via de formulieren op deze website. We vragen niet meer dan nodig is voor het betreffende doel.</p>
+        <table>
+          <tr><th>Formulier</th><th>Gegevens</th><th>Doel</th><th>Grondslag</th></tr>
+          <tr>
+            <td>Aanmeldformulier lidmaatschap</td>
+            <td>Naam, adres, e-mailadres en (indien gevraagd) telefoonnummer of bankgegevens voor de contributie</td>
+            <td>Je inschrijven en registreren als lid, contributie innen, en je op de hoogte houden van verenigingszaken</td>
+            <td>Uitvoering van de lidmaatschapsovereenkomst</td>
+          </tr>
+          <tr>
+            <td>Aanmelding activiteiten (bv. Halloween)</td>
+            <td>Naam, (straat)adres, aantal/namen deelnemers</td>
+            <td>De activiteit organiseren en met je kunnen afstemmen</td>
+            <td>Toestemming (vrijwillige aanmelding)</td>
+          </tr>
+          <tr>
+            <td>Suggestieformulier</td>
+            <td>Naam en/of e-mailadres (optioneel), je idee</td>
+            <td>Ideeën voor activiteiten verzamelen en er eventueel op reageren</td>
+            <td>Toestemming</td>
+          </tr>
+          <tr>
+            <td>Contactformulier</td>
+            <td>Naam, e-mailadres, je bericht</td>
+            <td>Je vraag of bericht kunnen beantwoorden</td>
+            <td>Gerechtvaardigd belang / toestemming</td>
+          </tr>
+        </table>
+      </section>
 
-<section id="lidmaatschap" class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" data-n="03">Lidmaatschap</span>
-    </div>
-    <div class="lid-wrap">
-      <div class="lid-copy">
-        <h2>Lid worden</h2>
-        <p class="price">&euro;&thinsp;30 <small>per jaar</small></p>
-      </div>
-      <div class="form-card">
-        <div class="fc-bar">
-          <h3>Aanmeldformulier</h3>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform" target="_blank" rel="noopener">Nieuw tabblad</a>
-        </div>
-        <div class="fc-body">
-          <div class="gform"
-               data-google-form="https://docs.google.com/forms/d/e/1FAIpQLSeH6fJOx4wAFLlGTy1yKJjsWKAmUlR6B2_NdJ7DKO3OjCEvYA/viewform"
-               data-height="1100"
-               data-title="Aanmeldformulier lidmaatschap Vogelpark"></div>
-        </div>
-      </div>
+      <section>
+        <h2>03 — Formulieren via Google Forms</h2>
+        <p>De formulieren op deze website zijn ingebed vanuit Google Forms (Google Ireland Limited / Google LLC). Wanneer je een formulier invult, wordt die informatie opgeslagen op de servers van Google en is deze zichtbaar voor de bestuursleden van Buurtvereniging Vogelpark die toegang hebben tot het bijbehorende Google-account.</p>
+        <p>Google kan hierbij gegevens verwerken buiten de Europese Economische Ruimte (EER). Google hanteert hiervoor de door de Europese Commissie goedgekeurde modelcontractbepalingen (Standard Contractual Clauses) en/of het EU-U.S. Data Privacy Framework als waarborg. We hebben zelf geen invloed op de technische verwerking door Google, maar gebruiken uitsluitend de functionaliteit die nodig is om jouw aanmelding of bericht te ontvangen.</p>
+        <p>We delen jouw gegevens niet met andere derde partijen, en gebruiken ze niet voor marketingdoeleinden of advertenties.</p>
+      </section>
+
+      <section>
+        <h2>04 — Cookies en lettertypen</h2>
+        <p>Deze website plaatst zelf geen tracking- of advertentiecookies en gebruikt geen analytics. Bij het invullen van een formulier kan Google via het ingebedde formulier technische cookies plaatsen die nodig zijn om het formulier te laten werken.</p>
+      </section>
+
+      <section>
+        <h2>05 — Bewaartermijnen</h2>
+        <ul>
+          <li><strong>Lidmaatschapsgegevens:</strong> zolang je lid bent, en tot maximaal 1 jaar na beëindiging van het lidmaatschap (bijvoorbeeld voor de financiële afhandeling).</li>
+          <li><strong>Aanmeldingen voor activiteiten:</strong> tot uiterlijk 3 maanden na afloop van de betreffende activiteit, daarna verwijderen we de reacties.</li>
+          <li><strong>Suggesties:</strong> tot het idee is besproken of uitgevoerd, met een maximum van 1 jaar.</li>
+          <li><strong>Contactverzoeken:</strong> tot je vraag is afgehandeld, met een maximum van 1 jaar.</li>
+        </ul>
+        <p>Na afloop van deze termijnen verwijderen we de reacties uit Google Forms/Sheets, tenzij we wettelijk verplicht zijn gegevens langer te bewaren (bijvoorbeeld voor de financiële administratie).</p>
+      </section>
+
+      <section>
+        <h2>06 — Hoe we jouw gegevens beveiligen</h2>
+        <ul>
+          <li>Alleen bestuursleden die de gegevens nodig hebben voor hun taak hebben toegang tot de formulierreacties.</li>
+          <li>Het Google-account waarmee de formulieren worden beheerd, is beveiligd met tweestapsverificatie.</li>
+          <li>We vragen in onze formulieren nooit meer gegevens dan nodig is voor het doel van dat formulier.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>07 — Gegevens van kinderen</h2>
+        <p>Bij sommige activiteiten (zoals Halloween) kun je namen van je kinderen doorgeven, bijvoorbeeld om aan te geven wie er meedoet. Dit gebeurt altijd via de aanmelding van een ouder of verzorger, die daarmee toestemming geeft namens het kind. We gebruiken deze gegevens uitsluitend voor de organisatie van de activiteit en bewaren ze niet langer dan noodzakelijk (zie bewaartermijnen hierboven).</p>
+      </section>
+
+      <section>
+        <h2>08 — Jouw rechten</h2>
+        <p>Onder de AVG heb je met betrekking tot jouw persoonsgegevens de volgende rechten:</p>
+        <ul>
+          <li><strong>Inzage:</strong> opvragen welke gegevens we van je hebben.</li>
+          <li><strong>Rectificatie:</strong> onjuiste gegevens laten corrigeren.</li>
+          <li><strong>Verwijdering:</strong> je gegevens laten wissen ("recht op vergetelheid").</li>
+          <li><strong>Beperking:</strong> de verwerking van je gegevens tijdelijk laten stopzetten.</li>
+          <li><strong>Bezwaar:</strong> bezwaar maken tegen de verwerking van je gegevens.</li>
+          <li><strong>Overdraagbaarheid:</strong> je gegevens in een gangbaar formaat opvragen om over te dragen aan een andere partij.</li>
+          <li><strong>Intrekken van toestemming:</strong> als de verwerking op toestemming is gebaseerd, kun je die op elk moment intrekken.</li>
+        </ul>
+        <p>Wil je een van deze rechten uitoefenen? Mail naar <a href="mailto:leendevogelpark@gmail.com" style="text-decoration:underline">leendevogelpark@gmail.com</a>. We reageren binnen 4 weken op je verzoek.</p>
+      </section>
+
+      <section>
+        <h2>09 — Klacht indienen</h2>
+        <p>Ben je niet tevreden over hoe we met jouw gegevens omgaan? Laat het ons eerst weten, dan zoeken we samen naar een oplossing. Je hebt daarnaast altijd het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens via <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener" style="text-decoration:underline">autoriteitpersoonsgegevens.nl</a>.</p>
+      </section>
+
+      <section>
+        <h2>10 — Wijzigingen in deze verklaring</h2>
+        <p>We kunnen deze privacyverklaring aanpassen, bijvoorbeeld wanneer we een nieuw formulier toevoegen. De datum boven aan deze pagina geeft aan wanneer de verklaring voor het laatst is bijgewerkt.</p>
+      </section>
+
     </div>
   </div>
 </section>
@@ -274,7 +272,7 @@
 <footer id="contact">
   <div class="wrap foot">
     <div>
-      <a class="logo logo-stack" href="#top" aria-label="Vogelpark — naar boven">
+      <a class="logo logo-stack" href="index.html" aria-label="Vogelpark — naar home">
         <svg class="bird" viewBox="0 0 96 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M6 42C24 40 34 30 44 16C48 10 54 10 58 18"/>
           <path d="M44 16C56 22 74 22 90 12C82 26 68 34 52 32"/>
@@ -293,9 +291,9 @@
     </div>
     <div class="foot-col">
       <div class="foot-label">Snel naar</div>
-      <a href="#over-ons">Over ons</a>
-      <a href="#activiteiten">Activiteiten</a>
-      <a href="#lidmaatschap">Lidmaatschap</a>
+      <a href="index.html#over-ons">Over ons</a>
+      <a href="index.html#activiteiten">Activiteiten</a>
+      <a href="index.html#lidmaatschap">Lidmaatschap</a>
       <a href="privacy.html">Privacyverklaring</a>
     </div>
   </div>
@@ -311,11 +309,6 @@
 </dialog>
 
 <script>
-  /*
-   * Google Form embedden — herbruikbaar. Plaats waar je het formulier wilt:
-   *   <div class="gform" data-google-form="https://docs.google.com/forms/d/e/FORM_ID/viewform" data-height="900" data-title="Omschrijving"></div>
-   * De link haal je in Google Forms op via Verzenden > < > (insluiten). embedded=true wordt automatisch toegevoegd.
-   */
   function embedGoogleForm(el) {
     var url = (el.getAttribute('data-google-form') || '').trim();
     if (!/^https:\/\/docs\.google\.com\/forms\/.+\/viewform/.test(url)) {
@@ -333,13 +326,6 @@
   }
 
   (function () {
-    var blocks = document.querySelectorAll('.gform[data-google-form]');
-    for (var i = 0; i < blocks.length; i++) {
-      embedGoogleForm(blocks[i]);
-    }
-
-    /* Aanmeld-modal voor activiteiten. Knop: <button data-aanmeld="Naam activiteit">Aanmelden</button>
-       Zodra er een formulier is: voeg data-aanmeld-form="https://docs.google.com/forms/d/e/FORM_ID/viewform" toe aan de knop. */
     var modal = document.getElementById('aanmeld-modal');
     if (!modal || typeof modal.showModal !== 'function') return;
     var t = document.getElementById('aanmeld-modal-title');
